@@ -1,0 +1,37 @@
+<h1>Music my World</h1>
+<h2>File Upload</h2>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+<input type="file" name="load" multiple >
+<button>Load file</button>
+
+<style class="images"></div>
+
+    <script>
+        const loadImages  = async ()=> {
+            const response = await fetch('http://localhost:3000/images').then(response => response.json)
+            const imagesElement = document.querySelector('.images');
+            imagesElement.innerHTML = '';
+            response.images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image.filePath;
+                img.height = '200';
+                imagesElement.appendChild(img);
+            })
+        };
+        window.onload = loadImages;
+    </script>
+<div>
+
+</form>
+
+
+    <audio src="uploads/audio.mp3" type="audio.mpeg"></audio>
+</div>
+
+
+
+<div class="nav">
+    <a href="/about"> About</a>
+    <a href="/Bio"> Bio</a>
+    <a href="/contacts">Contacts</a>
+</div>
